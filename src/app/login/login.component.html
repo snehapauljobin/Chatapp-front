@@ -1,0 +1,48 @@
+<div class="banner"><br><br>
+    <div class="container">
+        <div class="col-lg-3"></div>
+        
+          <form  #login="ngForm"(ngSubmit) ="loginUser()">
+        <div class="col-lg-6 offset-lg-3" style="background:rgba(243, 153, 19, 0.953)">
+         <div class="row col-lg-12" style="background:grey; margin:0%;height:60px;"><header  style="font-family: cursive;">LOGIN</header><br><br><br><br></div> 
+          
+         <div class="form-group" >
+             <div class="row">
+           
+               
+          
+            
+          
+              <div class="form-group">
+               <input  class="myInput form-control" name="email" required type="text"  [(ngModel)]="User.email"  #email="ngModel" pattern="^[a-z0-9.%]+@[a-z0-9.-]+\.[a-z]{2,4}"placeholder="Email" id="email2"  style="font-family: cursive;">
+               <small [class.d-none]="email.valid" style='font-family:sans-serif; margin-left: 4%;'>Enter valid email</small>
+           </div>
+
+
+           <br>
+        
+        
+            
+               <div class="form-group">
+                  <input    class="myInput form-control" type="password" [(ngModel)]="User.password"  #password="ngModel"   required placeholder="Password"  id="password" name="password" style="font-family: cursive;">
+                  <small [class.d-none]="password.valid " style='font-family:sans-serif; margin-left:4%'>Enter your password</small>
+               </div><br>
+                
+        
+             
+            <div class="form-group"><br>
+
+                
+                    <div><input class="myInput form-control" type="hidden" value="confirmed"  id="username1" #status="ngModel" name="status" style="font-family: cursive;" [(ngModel)]="User.status" >
+                    
+                </div><br>
+                </div>
+                <div class="form-group">
+                        <input type="submit" class="butt"  value="Login" [disabled]="login.form.invalid"  style="font-family: cursive;">
+                
+                    </div></div>
+                    <p style="margin-left:30%">Not a member? Register now!</p><br> 
+                    <div  class="col-lg-3"></div>
+                
+                </div>
+            

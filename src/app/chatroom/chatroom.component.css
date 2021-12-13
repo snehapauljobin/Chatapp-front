@@ -1,0 +1,22 @@
+div.scroll {
+    margin:4px, 4px;
+    padding:4px;
+   
+    /* width: 1000px; */
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align:justify;
+}
+button{
+    color:white;
+        background-color:#f88f06e9 ;
+        width:100px;
+        height:40px;
+        border-radius: 10px;
+        font-size: 20px;
+    
+}
+button:hover{
+    background-color: black;
+}

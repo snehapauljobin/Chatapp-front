@@ -1,0 +1,104 @@
+ <!-- <div class="row">
+   <span><h5>Start a personal chat with {{userItem.name}}</h5><button id="join" (click)="createRoom()">Join</button></span> 
+   <button type="button" class="btn btn-danger" style="width:100px" id="block" (click)="blockContact()" >Block</button>
+   <button type="button" class="btn btn-danger" style="width:100px;" id="ubblock" (click)="unblockContact()" >UnBlock</button>
+    <div class="well" style="height:200px; padding:15px;">
+       <div class="scroll col-sm-10">
+            <div class="well" style="height:200px; padding:15px;">
+                <div *ngFor="let item of messageArray">
+                <span><strong>{{item.user}} : </strong><a routerLink="/forward"><div (click)="forwardMsg(item)">{{item.message}}</div></a></span>
+                <a> <div *ngIf="item.image!=undefined"><img [src]="item.image" (click)="forwardImg(item)"style="width:100px;height:100px">
+                </div></a></div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+ <div class="row">
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="messageText">            
+    </div>
+    <div class="col-sm-2">
+            <button type="button" class="btn btn-success pull-right" id="send" (click)="sendMessage()">Send</button>
+            <button type="button" class="btn btn-dangerdefault" >Leave</button>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-10">
+        <input type="file"  name="image" class="form-control col'sm-6" id="input" (change)="onFileSelected($event)"  required accept="image/*" style="font-family:cursive;">          
+    </div>
+    <div class="col-sm-2">
+            <button type="button" class="btn btn-success pull-right" id="send" (click)="sendImage()">Send Image</button>
+           
+    </div>
+</div>
+<div class="row">
+    <button class="btn btn-success pull-left" style="width:100px"(click)="viewChatHis()">Chats</button>
+</div><br>
+<div class="scroll col-sm-10">
+    <div *ngFor="let item of chatHistory ">
+        <span><strong>{{item.user}} : </strong> {{item.message}}</span><br>
+        <div *ngIf="item.imgfile!=undefined"><img [src]="item.imgfile" style="width:100px;height:100px">
+        </div>
+        {{item.created}}<br>
+        </div>
+</div>  -->
+
+
+
+
+
+ <div class="row">
+    <span><h5>Start a personal chat with {{userItem.name}}</h5><button id="join" (click)="createRoom()">Join</button></span> 
+    <button type="button" class="btn btn-danger" style="width:100px" id="block" (click)="blockContact()" >Block</button>
+    <button type="button" class="btn btn-danger" style="width:100px;" id="unblock" (click)="unblockContact()" >UnBlock</button>
+    <button type="button" class="btn btn-danger" style="width:100px" id="mute" (click)="getMute(userItem)" >Mute</button>
+    <button type="button" class="btn btn-primary" style="width:100px;" id="unmute" (click)="getUnmute(userItem)" >UnMute</button>
+     <div class="well" style="height:200px; padding:15px;">
+        <div class="scroll col-sm-10">
+             <div class="well" style="height:200px; padding:15px;">
+                 <div *ngFor="let item of messageArray">
+                 <span id="chat"><strong>{{item.user}} : </strong><a routerLink="/forward"><div (click)="forwardMsg(item)">{{item.message}}</div></a></span>
+                 <a> <div *ngIf="item.image!=undefined"><img [src]="item.image" (click)="forwardImg(item)"style="width:100px;height:100px">
+                 </div></a></div>
+             </div>
+         </div>
+     </div>
+     </div><br><br><br>
+ 
+  <div class="row">
+     <div class="col-sm-10">
+         <input type="text" class="form-control" [(ngModel)]="messageText">            
+     </div>
+     <div class="col-sm-2">
+             <button type="button"  id="send" (click)="sendMessage()">Send</button>
+             <!-- <button type="button"  >Leave</button> -->
+     </div>
+ </div>
+ <div class="row">
+     <div class="col-sm-10">
+         <input type="file"  name="image" class="form-control col'sm-6" id="input" (change)="onFileSelected($event)"  required accept="image/*" style="font-family:cursive;">          
+     </div>
+     <div class="col-sm-2">
+             <button type="button"  style="width:140px" id="send" (click)="sendImage()">Send Image</button>
+            
+     </div>
+ </div>
+ <div class="row">
+     <button style="width:100px"(click)="viewChatHis()">Chats</button>
+ </div><br>
+ <div class="scroll col-sm-10">
+     <div *ngFor="let item of chatHistory ">
+         <span id="chat"><strong>{{item.user}} : </strong> {{item.message}}</span><br>
+         <div *ngIf="item.imgfile!=undefined"><img [src]="item.imgfile" style="width:100px;height:100px">
+         </div>
+         {{item.created}}<br>
+         </div>
+ </div>
+  
+
+
+ 
+
+
+

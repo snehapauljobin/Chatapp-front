@@ -1,0 +1,38 @@
+<div class="vertical-nav bg-white" id="sidebar">
+    <div class="py-4 px-3 mb-4 bg-light">
+      <div class="media d-flex align-items-center">
+       
+        <div class="media-body">
+          <h4 class="m-0">Welcome {{userItem.name}}</h4>
+          
+        </div>
+        <div class="nav flex-column bg-white mb-0">
+            <button style="margin-left: 80px;" routerLink="/chatroom"> Chat room</button>
+        </div>
+          
+            
+          
+      </div>
+    </div>
+  
+    <ul class="nav flex-column bg-white mb-0">
+        <li class="nav-item">
+          <a href="#" class="nav-link text-dark bg-light"  >
+                    <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+                  <h4>Contacts</h4>
+                </a><br>
+  
+    <ul class="nav flex-column bg-white mb-0" *ngFor="let user of users">
+      <li class="nav-item"><span class="dot" *ngIf="user.status=='online'" style="background-color: green;"></span>
+        <span class="dot1"  *ngIf="user.status=='offline'" style="background-color: red;"></span>
+        <span><button (click)=  "getindvuser(user)" >  {{user.name}}</button>
+                
+              </span><br>
+     
+  
+    </ul>
+    <div id="footer">
+        <img src="/assets/img/gray-wave-png-3.png" class="footer-img">
+        
+        
+        </div>

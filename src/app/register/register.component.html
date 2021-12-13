@@ -1,0 +1,100 @@
+<div class="banner"><br><br>
+    <div class="container">
+        <div class="col-lg-3"></div>
+        
+          <form #signup="ngForm" (ngSubmit)="AddUser()">
+        <div class="col-lg-6 offset-lg-3" style="background:rgba(243, 153, 19, 0.953)">
+         <div class="row col-lg-12" style="background:grey; margin:0%;height:60px;"><header  style="font-family: cursive;">REGISTER</header><br><br><br><br></div> 
+          
+         <div class="form-group" >
+             <div class="row">
+           
+               
+              
+            <div class="form-group"><br>
+
+               <input class="myInput form-control" type="text" placeholder="Name" required minlength="3" id="username1"  name="name" style="font-family: cursive;"  #name="ngModel" [(ngModel)]="Customer.name" [class.is-invalid]="name.invalid && name.touched">
+                <div *ngIf="name.errors && (name.dirty ||name.touched)" class="alert alert-danger" style="width:70%; margin-left: 40px;">
+                   <div [hidden]="!name.errors.required" >
+                      Please enter a name
+                   </div>
+                   <div [hidden]="!name.errors.minlength">
+                      Please enter minimum3 characters
+                   </div> 
+                </div>
+
+<br>
+            
+          
+              <div class="form-group">
+               <input  class="myInput form-control" name="email" required type="text"   #email="ngModel" [(ngModel)]="Customer.email" pattern="^[a-z0-9.%]+@[a-z0-9.-]+\.[a-z]{2,4}"placeholder="Email" id="email2"  style="font-family: cursive;">
+                <div *ngIf="email.errors && (email.dirty ||email.touched)" class="alert alert-danger" style="width:70%; margin-left: 40px;">
+                 <div [hidden]="!email.errors.required" >
+                    Please enter your Email
+                 </div>
+                 <div [hidden]="!email.errors.pattern">
+                    Please enter valid Email
+                 </div>
+              </div>
+             <div> 
+           </div>
+
+
+           <br>
+        
+        
+            
+               <div class="form-group">
+                  <input    class="myInput form-control" type="password"  [(ngModel)]="Customer.password" #password="ngModel" required placeholder="Password (Minimum 8 characters)" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&]).{8,32}" id="password" name="password" style="font-family: cursive;">
+                  <div *ngIf="password.errors && (password.dirty ||password.touched)" class="alert alert-danger" style="width:70%; margin-left: 40px;">
+                  <div [hidden]="!password.errors.required" >
+                     Please enter a password
+                  </div>
+                  <div [hidden]="!password.errors.pattern">
+                     Shoud contain Uppercase,Lowercase, Number and Character
+                  </div>
+                  </div> 
+               </div><br>
+                
+        
+               <div class="form-group">
+                  <input   class="myInput form-control"  type="password" required placeholder="Confirm password" name="passwordcheck" appConfirmEqualValidator="password" [(ngModel)]="Customer.passwordcheck"#passwordcheck="ngModel" id="password2"  style="font-family: cursive;"><br>
+                   <div *ngIf="passwordcheck.errors && (passwordcheck.dirty ||passwordcheck.touched)" class="alert alert-danger" style="width:70%; margin-left: 40px; height:70px">
+                    <div [hidden]="!passwordcheck.errors.required" >
+                       Confirm Password is required
+                    
+                </div>
+               
+                  
+                    <div [hidden]="!passwordcheck.errors.notEqual && passwordcheck.errors.required">
+                       Password and Confirm Password  doesn't match
+                    </div>
+                </div>
+                     
+            </div><br>
+            <div class="form-group"><br>
+
+               <input class="myInput form-control" type="hidden" value="pending" #status="ngModel" [(ngModel)]="Customer.status" required id="username1" name="status" style="font-family: cursive;" >
+               <!-- <div *ngIf="name.errors && (name.dirty ||name.touched)" class="alert alert-danger" style="width:70%; margin-left: 40px;"> -->
+                    <!-- <div [hidden]="!name.errors.required" >
+                      Please enter a name
+                   </div>
+                   <div [hidden]="!name.errors.minlength">
+                      Please enter minimum3 characters
+                   </div>  -->
+                </div>
+                <div class="form-group">
+                        <input type="submit" class="butt"  [disabled]="signup.form.invalid" value="Register"  style="font-family: cursive;">
+                
+                    </div></div>
+               
+                    <div  class="col-lg-3"></div>
+                
+                </div>
+            
+            
+        
+        
+        
+    
+

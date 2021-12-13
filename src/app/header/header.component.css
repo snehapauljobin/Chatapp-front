@@ -1,0 +1,28 @@
+.navbar{
+    background: #f88f06e9;
+  
+  }
+  
+  .nav-link{
+    font-size: large;
+    font-family: 'Josefin Sans', sans-serif;
+    color: antiquewhite;
+    font-size: 20px;
+    
+  }
+  
+  li{
+    padding-left: 10px;
+  }
+  
+  a:hover{
+    background: black;
+    /* border-width: 5px; */
+  color: #1b5011;
+  border-radius:8px ;
+    
+  }
+  .dropdown-item {
+    background: #f88f06e9;
+    
+  }

@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm navbar-light">
+    <div class="inlign">
+   
+    <div class="container-fluid">
+      
+      <button class="navbar-toggler order-first" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav navbar-center">
+          <!--<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active text-white"  id="navbarDropdownMenuLink" data-toggle="dropdown" *ngIf="chatservice.loggedIn()" aria-haspopup="true" aria-expanded="false">
+                Chats
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item  active dropdown-content "  routerLink="/employersignup">Lobby</a></li>
+                <li><a class="dropdown-item active  dropdown-content"  routerLink="/facultysignup">Deluxe</a></li>
+                <li><a class="dropdown-item active  dropdown-content"  routerLink="/alumnisignup">Hall</a>
+                  
+            </ul>
+        </li> -->
+           <li class="nav-item">
+            <a class="nav-link active" routerLink="/register" *ngIf="!chatservice.loggedIn()" style="color:whitesmoke ; font-size: 16px;">Register</a>
+          </li> 
+           <li class="nav-item">
+            <a class="nav-link active"  routerLink="/login" *ngIf="!chatservice.loggedIn()" style="color:whitesmoke; font-size: 16px;">Log In</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/chatroom" *ngIf="chatservice.loggedIn()" style="color:whitesmoke; font-size: 16px;">Chat room</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" routerLink="/dashboard" *ngIf="chatservice.loggedIn()" style="color:whitesmoke; font-size: 16px;">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active"(click)= "logoutUser()"routerLink="/logout" *ngIf="chatservice.loggedIn()" style="color:whitesmoke; font-size: 16px;">Logout</a>
+          </li> 
+        </ul>
+      </div>
+    </div></div>
+     
+    
+  </nav> <br><br>
+
+
+
